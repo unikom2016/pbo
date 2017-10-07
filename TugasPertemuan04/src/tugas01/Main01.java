@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 
-package tugaspertemuan04;
+package tugas01;
+
+import shapes.PersegiPanjang;
 
 /**
  *
  * @author Mahasiswa
  */
-public class TugasMain {
+public class Main01 {
 
     /**
      * @param args the command line arguments
@@ -20,12 +22,12 @@ public class TugasMain {
         PersegiPanjang p1 = new PersegiPanjang();
         p1.setLebar(4);
         p1.setPanjang(4);
-        System.out.println("Luas Persegi Panjang 1 = " + p1.getLuas());
+        p1.hitungLuas(1);
 
         PersegiPanjang p2 = new PersegiPanjang();
         p2.setLebar(3);
         p2.setPanjang(3);
-        System.out.println("Luas Persegi Panjang 2 = " + p2.getLuas());
+        p2.hitungLuas(2);
     }
     
 }
