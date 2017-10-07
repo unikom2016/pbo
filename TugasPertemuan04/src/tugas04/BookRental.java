@@ -7,6 +7,7 @@ public class BookRental {
     private String dateReturn;
     private int duration;
     private int late;
+    private int penalty;
 
     public String getId() {
         return id;
@@ -44,6 +45,10 @@ public class BookRental {
         return duration;
     }
 
+    public int getPenalty() {
+        return penalty;
+    }
+
     public void setDuration(int duration) {
         this.duration = duration;
     }
@@ -54,5 +59,9 @@ public class BookRental {
 
     public void setLate(int late) {
         this.late = late;
+    }
+
+    public void setPenalty(int penalty) {
+        this.penalty = penalty;
     }
 }
