@@ -16,6 +16,7 @@ public class Main04 {
         Scanner scr = new Scanner(System.in);
         BookRental br = new BookRental();
 
+        System.out.println("=== SISTEM PENGEMBALIAN BARANG ===");
         System.out.print("Nama \t\t\t\t: ");
         br.setName(scr.next());
 
@@ -64,33 +65,5 @@ public class Main04 {
         System.out.println("Lama Peminjaman \t\t\t\t: "+br.getDuration()+" Hari");
         System.out.println("Telat \t\t\t\t\t\t\t: "+br.getLate()+" Hari");
         System.out.println("Denda \t\t\t\t\t\t\t: Rp. "+br.getPenalty());
-//
-////        int a = ch.hitungcharge(rturnday, day);
-////        int d = ch.hitungdendahari(rturnday, day);
-//        int a = 0;
-//        int d = 0;
-//        int b = rturnmonth-month;
-//        int c = rturnyear-month;
-//        int e = rturnday-(day+1);
-//
-//        //hitung denda jika peminjaman lebih dari 2 hari
-//        if((a<=2) && (b==0) && (c<=0))
-//        //jika tepat waktu
-//        {
-//            System.out.println("Telat                       : Tepat Waktu");
-//            System.out.println("Denda                       : 0");
-//        }
-//        else if((a>=3) && (b==0))
-//        //jika lebih dari 2 hari
-//        {
-//            int charge=2500*d;
-//            System.out.println("Telat   : "+e+" hari");
-//            System.out.println("Denda   : Rp."+charge);
-//        }
-//        else
-//        {
-//            System.out.println("Data yang dimasukkan harus nomor");
-//        }
-//        System.out.println("--------------------------------------");
     }
 }
