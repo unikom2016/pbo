@@ -1,6 +1,7 @@
 package tugas04;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -19,20 +20,19 @@ public class Main04 {
         System.out.print("ID Member \t\t\t: ");
         br.setId(scr.next());
 
-        System.out.print("Tanggal Pinjam \t\t: ");
-        System.out.println();
-
-        Date dateBorrow = new Date();
+        // Current date
+        Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-        br.setDateBorrow(sdf.format(dateBorrow));
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        System.out.print("Tanggal Pinjam \t\t: ");
+        cal.set(Calendar.DAY_OF_WEEK, scr.nextInt());
+        br.setDateBorrow(sdf.format(cal.getTime()));
+        System.out.println(br.getDateBorrow());
 
         System.out.print("Tanggal Kembali \t: ");
-
-        // Current date
-        Date dateReturn = new Date();
-        br.setDateReturn(sdf.format(dateReturn));
-
+        br.setDateReturn(sdf.format(date));
         System.out.println(br.getDateReturn());
 
 //        System.out.println("Nama                        :"+nama);
