@@ -26,7 +26,7 @@ class Persegi {
     }
 }
 
-public class Main06Public extends Persegi {
+public class Main06Public {
 
     /**
      * @param args the command line arguments
@@ -34,7 +34,8 @@ public class Main06Public extends Persegi {
     public static void main(String[] args) {
         // TODO code application logic here
         Persegi pp = new Persegi();
-
+        pp.sisi = 5;
+        System.out.println(pp.getSisi());
     }
     
 }

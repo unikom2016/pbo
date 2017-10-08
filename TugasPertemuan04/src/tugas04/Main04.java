@@ -5,10 +5,6 @@ import org.joda.time.Interval;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -29,7 +25,6 @@ public class Main04 {
         br.setId(scr.next());
 
         // Current date
-//        Date date = new Date();
         DateTime date = new DateTime();
         DateTimeFormatter fmt = DateTimeFormat.forPattern("dd-MM-yyyy");
 
@@ -48,6 +43,7 @@ public class Main04 {
         System.out.println("ID member \t\t\t\t\t\t: " + br.getId());
         System.out.println("Tanggal Pinjam (dd-mm-yyyy) \t: " + br.getDateBorrow());
         System.out.println("Tanggal Kembali (dd-mm-yyyy) \t: " + br.getDateReturn());
+
         DateTime dt1 = fmt.parseDateTime(br.getDateBorrow());
         DateTime dt2 = fmt.parseDateTime(br.getDateReturn());
         Interval intv = new Interval(dt1, dt2);
