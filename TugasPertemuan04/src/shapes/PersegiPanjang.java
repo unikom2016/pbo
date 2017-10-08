@@ -50,4 +50,8 @@ public class PersegiPanjang extends BangunDatar {
         System.out.println("Luas Persegi Panjang " + order + " : " + panjang * lebar);
     }
 
+    public void hitungLuas(int order, int panjang) {
+        System.out.println("Luas Persegi Panjang " + order + " : " + panjang * lebar);
+    }
+
 }

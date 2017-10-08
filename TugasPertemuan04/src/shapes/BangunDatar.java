@@ -1,6 +1,7 @@
 package shapes;
 
 public class BangunDatar {
+
     public BangunDatar() {
     }
 
