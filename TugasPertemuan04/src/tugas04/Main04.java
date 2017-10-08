@@ -1,6 +1,7 @@
 package tugas04;
 
 import org.joda.time.DateTime;
+import org.joda.time.Interval;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -33,9 +34,9 @@ public class Main04 {
         DateTimeFormatter fmt = DateTimeFormat.forPattern("dd-MM-yyyy");
 
         System.out.print("Hari Pinjam \t\t: ");
-        date.dayOfWeek().setCopy(scr.nextInt());
+        DateTime res = date.dayOfWeek().setCopy(scr.nextInt() - 1);
         System.out.print("Tanggal Pinjam \t\t: ");
-        br.setDateBorrow(fmt.print(date));
+        br.setDateBorrow(fmt.print(res));
         System.out.println(br.getDateBorrow());
 
         System.out.print("Tanggal Kembali \t: ");
@@ -49,14 +50,15 @@ public class Main04 {
         System.out.println("Tanggal Kembali (dd-mm-yyyy) \t: " + br.getDateReturn());
         DateTime dt1 = fmt.parseDateTime(br.getDateBorrow());
         DateTime dt2 = fmt.parseDateTime(br.getDateReturn());
-//            long duration = dt2.minusDays(1) - dt1.minusDays(2);
-//            Long diff = TimeUnit.DAYS.convert(duration, TimeUnit.MILLISECONDS);
-//            br.setDuration(diff.intValue());
-//
-//            if (diff > 2) {
-//                br.setLate(br.getDuration() - 2);
-//                br.setPenalty(br.getLate() * 2500);
-//            }
+        Interval intv = new Interval(dt1, dt2);
+        long duration = intv.toDurationMillis();
+        Long diff = TimeUnit.DAYS.convert(duration, TimeUnit.MILLISECONDS);
+        br.setDuration(diff.intValue());
+
+        if (diff > 2) {
+            br.setLate(br.getDuration() - 2);
+            br.setPenalty(br.getLate() * 2500);
+        }
 
         System.out.println("Lama Peminjaman \t\t\t\t: " + br.getDuration() + " Hari");
         System.out.println("Telat \t\t\t\t\t\t\t: " + br.getLate() + " Hari");
