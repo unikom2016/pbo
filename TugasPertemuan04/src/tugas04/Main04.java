@@ -48,7 +48,7 @@ public class Main04 {
         DateTime dt2 = fmt.parseDateTime(br.getDateReturn());
         Interval intv = new Interval(dt1, dt2);
         long duration = intv.toDurationMillis();
-        Long diff = TimeUnit.DAYS.convert(duration, TimeUnit.MILLISECONDS);
+        Long diff = TimeUnit.MILLISECONDS.convert(duration, TimeUnit.MILLISECONDS);
         br.setDuration(diff.intValue());
 
         if (diff > 2) {
